@@ -5,7 +5,7 @@ def handler(event, context):
   print(event)
   args_str = ''
   if 'arguments' in event and event['arguments']:
-     = event['arguments']
+    args = event['arguments']
     args_str = json.dumps(args)
     print('event.arguments.msg >>>', event['arguments'])
   return {
