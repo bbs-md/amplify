@@ -12,7 +12,13 @@ const client = generateClient();
 function App() {
 
   async function fetchNotes() {
-    const apiData = await client.graphql({ query: myCustomQuery, variables: { nametq: "retro" } });
+    const apiData = await client.graphql({ query: myCustomQuery, variables: { 
+      cvData: {
+        bucketName: "bucketName-XXX-XXX",
+        objectKey: "objectKey-YYY-YYYY",
+        source: "alliedtesting.com"
+      }
+    }});
     console.log('apiData >>> ', apiData)
     //const notesFromAPI = apiData.data.listNotes.items;
     //setNotes(notesFromAPI);
