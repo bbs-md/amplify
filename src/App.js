@@ -38,8 +38,8 @@ function App() {
   }
 
   const btnClick = async () => {
-    //await fetchNotes()
-    await createNote()
+    await fetchNotes()
+    //await createNote()
   }
 
   return (
