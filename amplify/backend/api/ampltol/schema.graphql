@@ -7,5 +7,11 @@ type Mutation @aws_api_key {
 }
 
 type Query @aws_api_key {
-  myCustomQuery(nametq: String): String @function(name: "ampltollambda-${env}", region: "eu-west-1")
+  myCustomQuery(cvData: CvData): String @function(name: "ampltollambda-${env}", region: "eu-west-1")
+}
+
+input CvData {
+  bucketName: String!
+  objectKey: String!
+  source: String!
 }

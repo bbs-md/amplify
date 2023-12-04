@@ -22,7 +22,11 @@ function App() {
     const data = {namet: "name Tol"};
     const apiData = await client.graphql({
       query: myCustomMutation,
-      variables: {namet: "name Tol"},
+      variables: {cvData: {
+        bucketName: "bucketName-XXX-XXX",
+        objectKey: "objectKey-YYY-YYYY",
+        source: "alliedtesting.com"
+      }},
     });
     console.log('apiData mut >>> ', apiData)
   }
